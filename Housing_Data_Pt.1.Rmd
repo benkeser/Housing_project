@@ -1,0 +1,58 @@
+---
+title: "Project Introduction"
+output: html_document
+date: "`r Sys.Date()`"
+author: "Eric Viera"
+params: 
+  production: TRUE
+---
+# Housing Data Analysis Project
+```{r, set-chunk-opts, echo = FALSE, eval = params$production}
+library(knitr)
+opts_chunk$set(
+  echo = TRUE, warning = FALSE, message = FALSE
+)
+```
+
+## Introduction
+
+Boston Massachusetts is a city soaked to the brim with a lengthy history of standing up to injustice in many capacities. While Boston boasts some notable diversity statistics, one glaring statistic relating to net-worth really puts into question the number of injustices that are going unspoken of within the city limits. In a 2015 joint study conducted by Duke University and The New School, liquid assets (excluding money) were compared across racial groups within the greater Boston Metro area. The most widely acknowledged statistic taken from this study is that in 2015 the liquid-asset networth of the median white family in the greater Boston area is roughly a quarter-million USD, whereas the liquid-asset net worth of the median black family is $8 USD. While this is a surprising I was also drawn to another finding relating to homer ownership rates among communities of color. The purpose of this project is to use the Boston Housing Dataset uploaded to Kaggle in 2017 to explore trends in who is buying property vs renting, what characteristics in a community in Boston have resulted in lower property values. I am predominantly interested in the relationship between race and a variety of factors including: proportion of of each community renting vs proportion of homeowners, Compare the number of rooms per house across white and black communities, and finally comparing overall property value. To build on this Principal Component Analysis will be utilized to help streamline the process of detecting any other potential trends across all variables of interest. Any trends that become apparent will be explored further keeping in mind how these factors may relate to racial or income based inequity. 
+
+## Reading in the Data
+
+```{r, load-data}
+here::i_am("Housing_Data_Pt.1.Rmd")
+data <- readRDS(
+  file = here::here("output/data_clean.rds")
+)
+
+```
+
+## Table 1
+
+```{r, table1}
+table_one <- readRDS(
+  file = here::here("output/table_one.rds")
+)
+table_one
+```
+
+##### Table 1:
+Breaks down a variety of factors that could play a role in property value. Here property value was defined by Property tax rates. This was turned into a binary variable defining whether or not the mean property tax value for a given community was above the sample mean. A pearson's Chi-squared test was used to compare mean values between the two levels of property Tax.
+
+
+## Figure 1
+
+
+```{r, plot-data}
+#| fig.align = "center",
+#| out.width = "400px"
+knitr::include_graphics(
+  here::here("output/scatterplot.png")
+)
+```
+
+
+##### Figure 1.
+
+This scatter plot shows a general downward correlation between the proportion of a community at a low income status and the average number of rooms per unit within a given community. 
