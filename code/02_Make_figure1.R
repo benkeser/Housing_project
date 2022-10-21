@@ -11,7 +11,6 @@ scatterplot <-
   geom_point() + 
   geom_smooth(method = lm) +
   theme_bw()
-scatterplot
 ##We can save this figure using the ggplot package as well
 ggsave(
   here::here("output/scatterplot.png"),

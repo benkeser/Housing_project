@@ -5,7 +5,7 @@ here::i_am("code/01_Make_table1.R")
 data <- readRDS(file = here::here("output/data_clean.rds"))
 
 library(gtsummary)
-data
+
 table1 <- data %>% 
   select("CRIM" , "CHAS", "NOX", "PTRATIO", "Tax_amount", "B") %>%
   tbl_summary(by = Tax_amount) %>% 
@@ -13,6 +13,6 @@ table1 <- data %>%
   add_overall() %>%
   add_p()
 
-print("I executed without error")
+
 
 saveRDS(table1, file = here::here("output/table_one.rds"))

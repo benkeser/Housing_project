@@ -5,7 +5,7 @@ library(here)
 here::i_am("code/00_clean_data.R")
 absolute_path <- here::here('raw_data/HousingData.csv')
 data <- read.csv(absolute_path, header = TRUE)
-head(data)
+
 
 var_label(data) <- list(
   CRIM = "Crime Rate Per capita",
@@ -25,7 +25,7 @@ var_label(data) <- list(
   
 )
 data$Tax_amount <- ifelse(data$TAX < 408.2373, "< Mean", ">= Mean")
-mean(data$TAX)
+
 saveRDS(
   data,
   file = here::here("output/data_clean.rds")
