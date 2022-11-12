@@ -11,3 +11,6 @@ figure1:
 .PHONY: clean
 clean:
 	rm -f output/*.rds && rm -f *.html
+	
+install: 
+	R -e 'rev::restore()'
