@@ -1,11 +1,10 @@
 ---
 title: "Repo Introduction"
-output: html_document
+output: github_document
 date: "`r Sys.Date()`"
 author: "Eric Viera"
-params: 
-  production: TRUE
 ---
+
 # Project Description:
 For this Info 550 project I decided to look into some of the statistics surrounding income and housing inequality in Boston Massachusetts. I grew up in the area and some of these issues can be quite prominent depending on where in the city you travel. For this project I want to look compare metrics such as ownership vs renting rates across community, average income within a community, average bedroom count per unit, etc. across racial groups and income levels in order to better understand how inequalities are emphasized through modern housing practices.
 
