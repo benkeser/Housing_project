@@ -10,10 +10,11 @@ figure1:
 	
 .PHONY: clean
 clean:
-	rm -f output/*.rds && rm -f *.html
-	
+	rm -f output/*.rds && rm -f *.html && rm -f report/*.html
+.PHONY: install
+
 install: 
-	R -e 'renv::restore()'
-	
+	R -e "renv::restore(prompt = FALSE)"
+#Works for Mac
 final_report/report.html:
-	docker run -v "$(pwd)"/final_report:/project/final_report house_proj
+	docker run -v "/$$(pwd)"/final_report:/project/final_report house_proj
