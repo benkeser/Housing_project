@@ -15,6 +15,6 @@ clean:
 
 install: 
 	R -e "renv::restore(prompt = FALSE)"
-#Works for Mac
+#Works for Mac and windows 
 final_report/report.html:
 	docker run -v "/$$(pwd)"/final_report:/project/final_report house_proj
