@@ -41,6 +41,9 @@ This file is necessary for building our docker image which is an essential compo
 The contents of this file are used to create a docker image that has the capability to run my final project by just running the "make final_report/report.html" command in the terminal. In order to get to this point this dockerfile must be compiled using the 
 "docker build -t house_proj" command in terminal.
 
+*Note that in order to run this entire process automatically you only need to run the comman 
+"make final_report/report.html" and the entire report should compile within a folder called "final_report"
+
 
 ## Code folder
 
