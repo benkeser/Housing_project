@@ -1,5 +1,5 @@
 #Load in our data
-here::i_am("code/02_make_figure1.R")
+here::i_am("code/02_Make_figure1.R")
 data <- readRDS(file = here::here("output/data_clean.rds"))
 data <- na.exclude(data)
 library(ggplot2)

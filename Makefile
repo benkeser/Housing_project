@@ -13,4 +13,7 @@ clean:
 	rm -f output/*.rds && rm -f *.html
 	
 install: 
-	R -e 'rev::restore()'
+	R -e 'renv::restore()'
+	
+final_report/report.html:
+	docker run -v "$(pwd)"/final_report:/project/final_report house_proj
