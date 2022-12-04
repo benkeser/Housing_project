@@ -12,18 +12,35 @@ For this Info 550 project I decided to look into some of the statistics surround
 # Git Repository Contents:
 
 ## Home Folder:
- 1) .gitignore : 
+1) .gitignore : 
  a gitignore file is included to ensure that all of the outputs from my local repository will not be available for download on my gitHub repository. Specifically all .rds and .png files in the output folder, all html and pdf files in the home folder, and some random local files that don't serve any purpose to the project
  
- 2) Makefile: 
+2) Makefile: 
  This folder also includes a Make file which allows users to write make in the command line in order to render our Housing Data Report. Files used to make up this report are included within their own statements in the make file allowing for all the dependent files to be created when we actually 'make' our Make file. 
  
- 3) Housing_Data_Pt.1.Rmd: 
+A few new additions were added to our Makefile including:
+  install:
+  running make install in the terminal will load up the renvironment associated with this project allowing for all packages required to be installed
+  
+  final_report/report.html:
+  Running make final_report/report.html will run the docker command:
+  	docker run -v "$(pwd)"/final_report:/project/final_report house_proj for Mac OS
+  	and docker run -v "/$(pwd)"/final_report:/project/final_report house_proj for windows OS
+  	This command will automatically build our final project
+ 
+3) Housing_Data_Pt.1.Rmd: 
  This is the actual report that we are rendering using our render report code and our Make file to compile
 
 4) README.Rmd: 
 You are currently reading this description of my repo.
 Thank you for taking the time to do so ;)
+
+5) Dockerfile:
+This file is necessary for building our docker image which is an essential component to making sure that this report is an automatic and easily reproduced work flow 
+
+The contents of this file are used to create a docker image that has the capability to run my final project by just running the "make final_report/report.html" command in the terminal. In order to get to this point this dockerfile must be compiled using the 
+"docker build -t house_proj" command in terminal.
+
 
 ## Code folder
 
