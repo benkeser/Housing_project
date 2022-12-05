@@ -8,6 +8,7 @@ author: "Eric Viera"
 # Project Description:
 For this Info 550 project I decided to look into some of the statistics surrounding income and housing inequality in Boston Massachusetts. I grew up in the area and some of these issues can be quite prominent depending on where in the city you travel. For this project I want to look compare metrics such as ownership vs renting rates across community, average income within a community, average bedroom count per unit, etc. across racial groups and income levels in order to better understand how inequalities are emphasized through modern housing practices.
 
+Dockerhub link: https://hub.docker.com/repository/docker/edviera16/house_proj
 # Git Repository Contents:
 
 ## Home Folder:
@@ -19,9 +20,11 @@ For this Info 550 project I decided to look into some of the statistics surround
  
 A few new additions were added to our Makefile including:
   install:
-  running make install in the terminal will load up the renvironment associated with this project allowing for all packages required to be installed
+  running "make install" in the terminal will load up the r-environment associated with this project allowing for all packages required to be installed
   
   final_report/report.html:
+  First we will want to build this docker image by making sure your WD is that which contains the dockerfile. Then run "docker build -t edviera16/house_proj" in order to build this docker image.
+  
   Running make final_report/report.html will run the docker command:
   	docker run -v "$(pwd)"/final_report:/project/final_report house_proj for Mac OS
   	and docker run -v "/$(pwd)"/final_report:/project/final_report house_proj for windows OS
