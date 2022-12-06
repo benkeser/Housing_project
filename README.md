@@ -14,6 +14,7 @@ community, average income within a community, average bedroom count per
 unit, etc. across racial groups and income levels in order to better
 understand how inequalities are emphasized through modern housing
 practices.
+Dockerhub image link: https://hub.docker.com/repository/docker/edviera16/house_proj
 
 # Git Repository Contents:
 
@@ -30,12 +31,19 @@ practices.
     Data Report. Files used to make up this report are included within
     their own statements in the make file allowing for all the dependent
     files to be created when we actually ‘make’ our Make file.
+    Running 'make install' will load in our renv and allow you to access all required packages. 
 
 3)  Housing_Data_Pt.1.Rmd: This is the actual report that we are
     rendering using our render report code and our Make file to compile
 
 4)  README.Rmd: You are currently reading this description of my repo.
     Thank you for taking the time to do so ;)
+    
+5)  DOCKERFILE: This file is necessary for building our docker image which is an essential            component to making sure that this report is an automatic and easily reproduced work flow.
+    The contents of this file are used to create a docker image that has the capability to run my     final project by just running the "make final_report/report.html" command in the terminal. In     order to get to this point this dockerfile will be created in a container using the
+    "docker build -t edviera16/house_proj" command in your terminal.
+    *Note that in order to run this entire process automatically you only need to run the command 
+    "make final_report/report.html" and the entire report should compile within a folder on your      local computer called "final_report". This process will run on both Mac and Windows operating systems
 
 ## Code folder
 

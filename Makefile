@@ -10,7 +10,7 @@ figure1:
 	
 .PHONY: clean
 clean:
-	rm -f output/*.rds && rm -f *.html && rm -f report/*.html
+	rm -f output/*.rds && rm -f *.html && rm -f final_report/*.html
 .PHONY: install
 
 install: 
